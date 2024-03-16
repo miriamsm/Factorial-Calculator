@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factorial Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #result {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Factorial Calculator</h2>
+
+<p>Enter a number between 0 and 10:</p>
+
+<input type="number" id="numberInput">
+<button onclick="calculateFactorial()">Calculate Factorial</button>
+
+<div id="result"></div>
+
+<script>
+function calculateFactorial() {
+    var number = parseInt(document.getElementById("numberInput").value);
+
+    if (isNaN(number) || number < 0 || number > 10) {
+        document.getElementById("result").innerText = "Invalid Input";
+        return;
+    }
+
+    var factorial = 1;
+    for (var i = number; i >= 1; i--) {
+        factorial *= i;
+    }
+
+    document.getElementById("result").innerText = number + "! = " + factorial;
+}
+</script>
+
+</body>
+</html>
