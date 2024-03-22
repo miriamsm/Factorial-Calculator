@@ -34,11 +34,16 @@ function calculateFactorial() {
     }
 
     var factorial = 1;
+    var calculationSteps = [];
+
     for (var i = number; i >= 1; i--) {
         factorial *= i;
+        calculationSteps.push(i);
     }
 
-    document.getElementById("result").innerText = number + "! = " + factorial;
+    var calculationString = calculationSteps.join(' x ');
+
+    document.getElementById("result").textContent = number + "! = " + calculationString + " = " + factorial;
 }
 </script>
 
